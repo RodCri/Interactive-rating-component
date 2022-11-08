@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gulp with TailwindCSS</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Interactive rating component</title>
+  <meta name="description" content="Interactive rating component with gulp and tailwind">
+  <meta name="keywords" content="gulp, tailwind, Interactive rating">
+  <meta name="author" content="Cristian Camilo Rodriguez">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
-<body class="bg-gray-200">
-    <h1>Test</h1>
-    <script src="./js/scripts.js"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<body>
+  <main class="content h-screen grid place-content-center">
+    <article class="card rounded-xl p-8 mb-7">
+      <div class="card__start w-8 p-2 rounded-full">
+        <img src="img/icon-star.svg" alt="start">
+      </div>
+      <h1 class="card__title my-6 text-xl font-bold">How did we do?</h1>
+      <p class="card__info text-xs mb-7 leading-6">Please let us know how we did with your support request. all feedback is appreciated to help us improved our offering!</p>
+      <div class="card__score mb-7 flex justify-between">
+        <button class="btn-score rounded-full text-xs" value="1">1</button>
+        <button class="btn-score rounded-full text-xs" value="2">2</button>
+        <button class="btn-score rounded-full text-xs" value="3">3</button>
+        <button class="btn-score rounded-full text-xs" value="4">4</button>
+        <button class="btn-score rounded-full text-xs" value="5">5</button>
+      </div>
+      <button class="card__submit uppercase font-bold">Submit</button>
+    </article>
+    <article class="modal rounded-xl flex flex-col items-center justify-center">
+      <img src="img/illustration-thank-you.svg" alt="tank youu" class="modal__img mb-7">
+      <p class="modal__selected mb-7 flex items-center justify-center">You selected <span class="selected"> </span> out of 5</p>
+      <p class="modal__tank font-bold mb-5">Thank you!</p>
+      <p class="modal__message">We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+    </article>
+  </main>
+
+
+  <script src="./js/scripts.js"></script>
 </body>
+
 </html>

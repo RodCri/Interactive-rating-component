@@ -1,40 +1,125 @@
-//All styles can be added here.
-.hero-heading{
-    @apply text-4xl mb-10 text-white font-medium;
-}
-h1{
-    color: aqua
-}
-.instructions{    
-    .sub-title{
-        @apply text-gray-900 pb-2 border-b-2 border-gray-400 mb-5 text-xl font-medium;
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
 
-        & + p {
-            @apply mb-3
+$orange: hsl(25, 97%, 53%);
+$white: hsl(0, 0%, 100%);
+$light-grey: hsl(217, 12%, 63%);
+$medium-grey: hsl(216, 12%, 54%);
+$dark-blue: hsl(213, 19%, 18%);
+$very-dark-blue: hsl(216, 12%, 8%);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Overpass', sans-serif;
+    font-size: 15px;
+    background: $very-dark-blue;
+}
+.card{
+    width: 320px;
+    height: 385px;
+    background-color: $dark-blue;
+    @media(min-width: 720px){
+        width: 416px;
+        height: 412px;
+    }
+    &__start{
+        background-color: #373e47;
+        @media(min-width:720px){
+            width: 48px;
+            height: 46px;
+            display: flex;
+            justify-content: center;
+            img{
+                padding: 3px;
+            }
         }
     }
-    .code{
-        @apply block font-mono border rounded bg-gray-100 text-gray-700 px-4 py-5 leading-normal text-sm shadow;
-
-        &.pre{
-            @apply whitespace-pre;
-        }
-
-        em{
-            @apply opacity-75;
+    &__title{
+        color: $white;
+        @media(min-width:720px){
+            font-size: 23px;
         }
     }
-
-}
-
-.social{
-    @apply block pt-6 text-gray-700;
-
-    a{
-        @apply text-blue-500 font-medium p-4;
-
+    &__info{
+        color: $light-grey;
+        @media(min-width:720px){
+            font-size: 15px;
+        }
+    }
+    &__score{
+        .btn-score{
+            width: 40px;
+            height: 40px;
+            background-color: #373e47;
+            color: $light-grey;
+            font-weight: 700;
+            @media(min-width:720px){
+                width: 55px;
+                height: 55px;
+                font-size: 14px;
+                font-weight: 700;
+            }
+            &:hover{
+                background-color: $light-grey;
+                color: $white;
+            }
+            &:focus{
+                background-color: $orange;
+                color: $white;
+            }
+        }
+    }
+    &__submit{
+        background-color: $orange;
+        width: 100%;
+        height: 46px;
+        border-radius: 20px;
+        color: $white;
+        letter-spacing: 3px;
         &:hover{
-            @apply text-blue-700;
+            background-color: $white;
+            color: $orange;
         }
+    }
+}
+.modal{
+    display: none;
+    width: 320px;
+    height: 385px;
+    background-color: $dark-blue;
+    padding: 30px 40px 30px;
+    justify-content: center;
+    align-items: center;
+    @media(min-width: 720px){
+        width: 416px;
+        height: 412px;
+    }   
+    &__img{
+        width: 165px;
+        height: 120px;
+    }
+    &__selected{
+        color: $orange;
+        width: 200px;
+        height: 30px;
+        border-radius: 20px;
+        background-color: #373e47;
+        font-size: 13px;
+        font-weight: 400;
+        gap: 5px;
+    }
+    &__tank{
+        font-size: 24px;
+        color: $white;
+    }
+    &__message{
+        font-size: 14px;
+        color: #888f99;
+        line-height: 24px;
+        text-align: center;
+        font-weight: 700;
     }
 }
